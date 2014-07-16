@@ -28,10 +28,6 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-<<<<<<< HEAD
-    bcrypt (3.1.7)
-    builder (3.2.2)
-=======
     autoprefixer-rails (2.1.0.20140628)
       execjs
     bcrypt (3.1.7)
@@ -39,7 +35,6 @@ GEM
       sass (~> 3.2)
     builder (3.2.2)
     coderay (1.1.0)
->>>>>>> 82c21cd
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -67,23 +62,17 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-<<<<<<< HEAD
-=======
     method_source (0.8.2)
->>>>>>> 82c21cd
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.5)
-<<<<<<< HEAD
-=======
     pry (0.10.0)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
->>>>>>> 82c21cd
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -114,10 +103,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-<<<<<<< HEAD
-=======
     slop (3.5.0)
->>>>>>> 82c21cd
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -148,20 +134,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-=======
   autoprefixer-rails
   bootstrap-sass
->>>>>>> 82c21cd
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
   jquery-rails
   pg
-<<<<<<< HEAD
-=======
   pry
->>>>>>> 82c21cd
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
