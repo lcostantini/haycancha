@@ -6,11 +6,8 @@ gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-<<<<<<< HEAD
-=======
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
->>>>>>> 82c21cd
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -42,10 +39,6 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-<<<<<<< HEAD
-
-=======
 group :development, :test do
   gem 'pry'
 end
->>>>>>> 82c21cd
