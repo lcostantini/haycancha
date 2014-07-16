@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Futbol</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <% if owner_signed_in? %>
+          <%= link_to "Home", owners_home_welcome_path, class: "navbar-brand" %>
+      <% else %>
+          <%= link_to "Home", root_path, class: "navbar-brand" %>
+      <% end %>
+    </div>
+    <div class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right" role="form">
+        <% if owner_signed_in? %>
+            Signed in as <%= current_owner.email %>. Not you? |
+            <%= link_to "Sign out", destroy_owner_session_path, method: :delete, class: "btn btn-danger" %>
+        <% else %>
+            <%= link_to "Sign in", new_owner_session_path, class: "btn btn-success" %>
+            <%= link_to "Sign up", new_owner_registration_path, class: "btn btn-primary" %>
+        <% end %>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>

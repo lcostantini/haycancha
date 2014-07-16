@@ -1,0 +1,29 @@
+<h1>Listing fields</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Telephone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fields.each do |field| %>
+      <tr>
+        <td><%= field.name %></td>
+        <td><%= field.address %></td>
+        <td><%= field.telephone %></td>
+        <td><%= link_to 'Show', field %></td>
+        <td><%= link_to 'Edit', edit_field_path(field) %></td>
+        <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Field', new_owners_field_path %>

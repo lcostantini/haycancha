@@ -8,7 +8,26 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <%= link_to "Home", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right" role="form">
+        <%= link_to "Users", users_home_welcome_path, class: "btn btn-primary" %>
+        <%= link_to "Owners", owners_home_welcome_path, class: "btn btn-primary" %>
+      </form>
+    </div><!--/.navbar-collapse -->
+  </div>
+</div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
