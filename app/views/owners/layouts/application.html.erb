@@ -25,9 +25,6 @@
         <% if owner_signed_in? %>
             Signed in as <%= current_owner.email %>. Not you? |
             <%= link_to "Sign out", destroy_owner_session_path, method: :delete, class: "btn btn-danger" %>
-        <% else %>
-            <%= link_to "Sign in", new_owner_session_path, class: "btn btn-success" %>
-            <%= link_to "Sign up", new_owner_registration_path, class: "btn btn-primary" %>
         <% end %>
       </form>
     </div><!--/.navbar-collapse -->
