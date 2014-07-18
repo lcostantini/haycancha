@@ -1,4 +1,5 @@
-<%= form_for([:owners, @field]) do |f| %>
+<%= form_for([:owners, @field], :html => {:class => "form-newfield"}) do |f| %>
+  <h1 class="form-signin-heading">New Field</h1>
   <% if @field.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@field.errors.count, "error") %> prohibited this field from being saved:</h2>
@@ -13,17 +14,17 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :telephone %><br>
-    <%= f.text_field :telephone %>
+    <%= f.text_field :telephone, :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Field", :class => "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>

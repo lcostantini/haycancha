@@ -29,7 +29,7 @@ class Owners::FieldsController < ApplicationController
 
     respond_to do |format|
       if @field.save
-        format.html { redirect_to @field, notice: 'Field was successfully created.' }
+        format.html { redirect_to owners_fields_path, notice: 'Field was successfully created.' }
         format.json { render :show, status: :created, location: @field }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Owners::FieldsController < ApplicationController
   def update
     respond_to do |format|
       if @field.update(field_params)
-        format.html { redirect_to @field, notice: 'Field was successfully updated.' }
+        format.html { redirect_to owners_fields_path, notice: 'Field was successfully updated.' }
         format.json { render :show, status: :ok, location: @field }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class Owners::FieldsController < ApplicationController
   def destroy
     @field.destroy
     respond_to do |format|
-      format.html { redirect_to fields_url, notice: 'Field was successfully destroyed.' }
+      format.html { redirect_to owners_fields_path, notice: 'Field was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

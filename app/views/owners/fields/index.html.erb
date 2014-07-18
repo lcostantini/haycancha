@@ -1,29 +1,27 @@
-<h1>Listing fields</h1>
-
-<table>
-  <thead>
+<h1 class="sub-header">Listing fields</h1>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
     <tr>
       <th>Name</th>
       <th>Address</th>
       <th>Telephone</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
-
-  <tbody>
+    </thead>
+    <tbody>
     <% @fields.each do |field| %>
-      <tr>
-        <td><%= field.name %></td>
-        <td><%= field.address %></td>
-        <td><%= field.telephone %></td>
-        <td><%= link_to 'Show', field %></td>
-        <td><%= link_to 'Edit', edit_field_path(field) %></td>
-        <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr>
+          <td><%= field.name %></td>
+          <td><%= field.address %></td>
+          <td><%= field.telephone %></td>
+          <td><%= link_to 'Schedules', owners_field_path(field), class: "btn btn-xs btn-primary" %></td>
+          <td><%= link_to 'Show', owners_field_path(field), class: "btn btn-xs btn-info" %></td>
+          <td><%= link_to 'Edit', edit_owners_field_path(field), class: "btn btn-xs btn-warning" %></td>
+          <td><%= link_to 'Destroy', owners_field_path(field), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %></td>
+        </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Field', new_owners_field_path %>
+    </tbody>
+  </table>
+  <%= link_to 'New Field', new_owners_field_path, class: "btn btn-success" %>
+</div>
