@@ -25,7 +25,7 @@ class Owners::FieldsController < ApplicationController
   # POST /fields
   # POST /fields.json
   def create
-    @field = Field.new(field_params)
+    @field = current_owner.fields.build(field_params)
 
     respond_to do |format|
       if @field.save

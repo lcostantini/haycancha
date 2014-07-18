@@ -7,5 +7,6 @@ class CreateFields < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :fields, :owner_id
   end
 end
