@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="form-newfield">
+  <div class="starter-template">
 
-<p>
-  <strong>Name:</strong>
-  <%= @field.name %>
-</p>
+    <p class="lead" id="notice"><%= notice %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @field.address %>
-</p>
+    <p class="lead">
+      <strong>Name:</strong>
+      <%= @field.name %>
+    </p>
 
-<p>
-  <strong>Telephone:</strong>
-  <%= @field.telephone %>
-</p>
+    <p class="lead">
+      <strong>Address:</strong>
+      <%= @field.address %>
+    </p>
 
-<%= link_to 'Edit', edit_owners_field_path(@field) %> |
-<%= link_to 'Back', owners_fields_path %>
+    <p class="lead">
+      <strong>Telephone:</strong>
+      <%= @field.telephone %>
+    </p>
+
+    <%= link_to 'Edit', edit_owners_field_path(@field), class: "btn btn-warning" %> |
+    <%= link_to 'Back', owners_fields_path, class: "btn btn-default" %>
+
+  </div>
+</div>

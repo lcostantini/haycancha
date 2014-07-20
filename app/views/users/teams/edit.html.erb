@@ -1,6 +1,8 @@
-<h1>Editing team</h1>
+<div class="form-newfield"><h1>Editing team</h1></div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', users_team_path(@team) %> |
-<%= link_to 'Back', users_teams_path %>
+<div class="form-newfield">
+<%= link_to 'Show', users_team_path(@team), class: "btn btn-info" %> |
+<%= link_to 'Back', users_teams_path, class: "btn btn-default" %>
+</div>

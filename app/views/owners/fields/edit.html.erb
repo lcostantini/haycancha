@@ -1,6 +1,8 @@
-<h1>Editing field</h1>
+<div class="form-newfield"><h1>Editing field</h1></div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', owners_field_path(@field) %> |
-<%= link_to 'Back', owners_fields_path %>
+<div class="form-newfield">
+<%= link_to 'Show', owners_field_path(@field), class: "btn btn-info" %> |
+<%= link_to 'Back', owners_fields_path, class: "btn btn-default" %>
+</div>

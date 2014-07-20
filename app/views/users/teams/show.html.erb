@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="form-newfield">
+  <div class="starter-template">
 
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
+    <p class="lead" id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_users_team_path(@team) %> |
-<%= link_to 'Back', users_teams_path %>
+    <p>
+      <strong>Name:</strong>
+      <%= @team.name %>
+    </p>
+
+    <%= link_to 'Edit', edit_users_team_path(@team), class: "btn btn-warning" %> |
+    <%= link_to 'Back', users_teams_path, class: "btn btn-default" %>
+
+  </div>
+</div>
