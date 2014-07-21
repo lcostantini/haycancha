@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :users do
     get '/home/welcome'
     resources :teams
+    resources :notifications
   end
 
   root 'welcome#index'

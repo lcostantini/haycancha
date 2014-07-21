@@ -23,6 +23,7 @@
     <div class="navbar-collapse collapse">
       <form class="navbar-form navbar-right" role="form">
         <% if user_signed_in? %>
+            <%= link_to "Notification", users_notifications_path, class: "btn btn-danger" %>
             Signed in as <%= current_user.email %>. Not you? |
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
         <% else %>
