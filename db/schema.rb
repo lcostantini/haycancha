@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20140721143355) do
   add_index "fields", ["owner_id"], name: "index_fields_on_owner_id", using: :btree
 
   create_table "notifications", force: true do |t|
-    t.string   "topic"
     t.integer  "user_id"
+    t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
