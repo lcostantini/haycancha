@@ -7,14 +7,18 @@ class Users::NotificationsController < ApplicationController
   end
 
   def new
-    @notification = Notification.new
+    @notification = Notification.new team_id: params[:team_id]
   end
 
-  def destroy
-    @notification.destroy
+  def create
+    @notification = current_user.notifications.build(notification_params)
+
     respond_to do |format|
-      format.html { redirect_to users_notifications_path, notice: 'Team was successfully destroyed.' }
-      format.json { head :no_content }
+      if @notification.save
+        format.html { redirect_to users_teams_path }
+      else
+        format.html { render :new }
+      end
     end
   end
 

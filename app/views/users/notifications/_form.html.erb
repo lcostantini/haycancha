@@ -1,0 +1,10 @@
+<%= form_for([:users, @notification], :html => {:class => "form-newfield"}) do |f| %>
+  <div class="field">
+    <%= text_field_tag :email, :placeholder => "Email", :class => "form-control" %>
+  </div>
+  <%= f.hidden_field :team_id %>
+  <%= f.hidden_field :state, :value => :waiting %>
+  <div class="actions">
+    <%= f.submit "Add Player", :class => "btn btn-lg btn-primary btn-block" %>
+  </div>
+<% end %>

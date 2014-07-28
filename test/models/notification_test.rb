@@ -3,8 +3,9 @@ require 'test_helper'
 class NotificationTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new({email: 'qwe@qwe.com', password: 'password'})
-    @team = Team.new
+    @user = User.create({email: 'qwe@qwe.com', password: 'password'})
+    @team = Team.create({name: 'my team'})
+    @notification = Notification.new({user_id: 1, team_id: 11, state: :waiting})
   end
 
   test 'user notifications' do
@@ -29,4 +30,12 @@ class NotificationTest < ActiveSupport::TestCase
     notification = Notification.start(@user, @team)
     assert_equal notification.state, :waiting
   end
+
+  test 'associates user when passing an email' do
+    notification = Notification.new team: @team
+    notification.email = 'qwe@qwe.com'
+    notification.save
+    assert notification.user
+  end
+
 end
