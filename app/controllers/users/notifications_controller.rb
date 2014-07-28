@@ -2,7 +2,7 @@ class Users::NotificationsController < ApplicationController
   layout "users/layouts/application"
 
   def index
-    @notifications = current_user.notifications.all
+    @notifications = current_user.notifications
     @count = @notifications.length
   end
 
@@ -11,8 +11,7 @@ class Users::NotificationsController < ApplicationController
   end
 
   def create
-    @notification = current_user.notifications.build(notification_params)
-
+    @notification = Notification.new(notification_params)
     respond_to do |format|
       if @notification.save
         format.html { redirect_to users_teams_path }
@@ -20,6 +19,16 @@ class Users::NotificationsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def accept
+    Notification.find(params[:notification_id]).accept!
+    redirect_to users_notifications_path
+  end
+
+  def cancel
+    Notification.find(params[:notification_id]).cancel!
+    redirect_to users_notifications_path
   end
 
   private
@@ -30,6 +39,6 @@ class Users::NotificationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def notification_params
-      params.require(:notification).permit(:user_id, :team_id, :state)
+      params.require(:notification).permit(:user_id, :team_id, :state, :email)
     end
 end

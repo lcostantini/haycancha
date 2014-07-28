@@ -11,7 +11,7 @@
       <% @teams.each do |team| %>
         <tr>
           <td><%= team.name %></td>
-          <td><%= link_to 'Add Players', new_users_notification_path(team_id: team.id), class: "btn btn-xs btn-success" %></td>
+          <td><%= link_to 'Add Players', new_users_team_notification_path(team), class: "btn btn-xs btn-success" %></td>
           <td><%= link_to 'Show', users_team_path(team), class: "btn btn-xs btn-info" %></td>
           <td><%= link_to 'Edit', edit_users_team_path(team), class: "btn btn-xs btn-warning" %></td>
           <td><%= link_to 'Destroy', users_team_path(team), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %></td>

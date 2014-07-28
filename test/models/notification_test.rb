@@ -10,19 +10,19 @@ class NotificationTest < ActiveSupport::TestCase
 
   test 'user notifications' do
     notification = Notification.start(@user, @team)
-    notification.accept
+    notification.accept!
     assert @team.users.include?(@user)
   end
 
   test 'accepted' do
     notification = Notification.start(@user, @team)
-    notification.accept
+    notification.accept!
     assert_equal notification.state, :accepted
   end
 
   test 'canceled' do
     notification = Notification.start(@user, @team)
-    notification.canceled
+    notification.cancel!
     assert_equal notification.state, :canceled
   end
 

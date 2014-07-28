@@ -10,9 +10,9 @@
     <tbody>
       <% @notifications.each do |notification| %>
         <tr>
-          <td><%= notification.topic %></td>
-          <td><%= link_to 'Acept', users_notification_path(notification), class: "btn btn-xs btn-info" %></td>
-          <td><%= link_to 'Cancel', users_notification_path(notification), method: :delete, class: "btn btn-xs btn-danger" %></td>
+          <td><%= notification.state %></td>
+          <td><%= link_to 'Acept', users_notification_accept_path(notification), method: :post, class: "btn btn-xs btn-info" %></td>
+          <td><%= link_to 'Cancel', users_notification_cancel_path(notification), method: :post, class: "btn btn-xs btn-danger" %></td>
         </tr>
       <% end %>
     </tbody>

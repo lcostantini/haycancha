@@ -5,7 +5,7 @@ class Owners::FieldsController < ApplicationController
   # GET /fields
   # GET /fields.json
   def index
-    @fields = Field.all
+    @fields = current_owner.fields
   end
 
   # GET /fields/1

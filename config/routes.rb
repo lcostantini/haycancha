@@ -10,8 +10,14 @@ Rails.application.routes.draw do
 
   namespace :users do
     get '/home/welcome'
-    resources :teams
-    resources :notifications
+    resources :notifications do
+      post 'accept'
+      post 'cancel'
+    end
+    resources :teams do
+      resources :notifications
+    end
+
   end
 
   root 'welcome#index'

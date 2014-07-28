@@ -2,21 +2,19 @@ class Notification < ActiveRecord::Base
   belongs_to :user
   belongs_to :team
 
-  attr_accessor :email
+  validates :user, presence: true
 
-  before_save :associate_user
-
-  def self.start(user, team)
+  def self.start user, team
     @notification = Notification.create({user: user, team: team, state: :waiting})
   end
 
-  def accept
+  def accept!
     self.state = :accepted
     join_team
     save
   end
 
-  def canceled
+  def cancel!
     self.state = :canceled
     save
   end
@@ -25,8 +23,12 @@ class Notification < ActiveRecord::Base
     team.users << user
   end
 
-  def associate_user
-    self.user ||= User.find_by_email email
+  def email= email
+    self.user = User.find_by_email email
+  end
+
+  def email
+    user.email if user
   end
 
 end
