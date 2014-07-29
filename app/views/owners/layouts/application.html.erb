@@ -14,20 +14,14 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
       </button>
-      <% if owner_signed_in? %>
-          <%= link_to "Home", owners_home_welcome_path, class: "navbar-brand" %>
-      <% else %>
-          <%= link_to "Home", root_path, class: "navbar-brand" %>
-      <% end %>
+      <%= link_to "Home", owners_home_welcome_path, class: "navbar-brand" %>
     </div>
     <div class="navbar-collapse collapse">
       <form class="navbar-form navbar-right" role="form">
-        <% if owner_signed_in? %>
-            <span class="starter-template color-text">Signed in as <%= current_owner.email %>. Not you?</span> |
-            <%= link_to "Sign out", destroy_owner_session_path, method: :delete, class: "btn btn-danger" %>
-        <% end %>
+        <span class="starter-template color-text">Signed in as <%= current_owner.email %>. Not you?</span> |
+        <%= link_to "Sign out", destroy_owner_session_path, method: :delete, class: "btn btn-danger" %>
       </form>
-    </div><!--/.navbar-collapse -->
+    </div>
   </div>
 </div>
 

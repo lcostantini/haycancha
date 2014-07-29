@@ -1,29 +1,14 @@
-class Owners::FieldsController < ApplicationController
+class Owners::FieldsController < Owners::ApplicationController
   before_action :set_field, only: [:show, :edit, :update, :destroy]
-  layout "owners/layouts/application"
 
-  # GET /fields
-  # GET /fields.json
   def index
     @fields = current_owner.fields
   end
 
-  # GET /fields/1
-  # GET /fields/1.json
-  def show
-  end
-
-  # GET /fields/new
   def new
     @field = Field.new
   end
 
-  # GET /fields/1/edit
-  def edit
-  end
-
-  # POST /fields
-  # POST /fields.json
   def create
     @field = current_owner.fields.build(field_params)
 
@@ -38,8 +23,6 @@ class Owners::FieldsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /fields/1
-  # PATCH/PUT /fields/1.json
   def update
     respond_to do |format|
       if @field.update(field_params)
@@ -52,8 +35,6 @@ class Owners::FieldsController < ApplicationController
     end
   end
 
-  # DELETE /fields/1
-  # DELETE /fields/1.json
   def destroy
     @field.destroy
     respond_to do |format|
@@ -63,12 +44,10 @@ class Owners::FieldsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_field
       @field = Field.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def field_params
       params.require(:field).permit(:name, :address, :telephone)
     end

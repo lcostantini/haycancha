@@ -11,16 +11,9 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_field :name, :placeholder => "Name", :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :address, :placeholder => "Address", :class => "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :telephone, :placeholder => "Telephone", :class => "form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Create Field", :class => "btn btn-lg btn-primary btn-block" %>
-  </div>
+  <div class="field"><%= f.text_field :name, :placeholder => "Name", :class => "form-control" %></div> <br>
+  <div class="field"><%= f.text_field :address, :placeholder => "Address", :class => "form-control" %></div> <br>
+  <div class="field"><%= f.text_field :telephone, :placeholder => "Telephone", :class => "form-control" %></div> <br>
+  <div class="actions"><%= f.submit "Create Field", :class => "btn btn-lg btn-primary btn-block" %></div>
+
 <% end %>

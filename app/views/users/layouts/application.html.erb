@@ -14,23 +14,14 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
       </button>
-      <% if user_signed_in? %>
-          <%= link_to "Home", users_home_welcome_path, class: "navbar-brand" %>
-      <% else %>
-          <%= link_to "Home", root_path, class: "navbar-brand" %>
-      <% end %>
+      <%= link_to "Home", users_home_welcome_path, class: "navbar-brand" %>
     </div>
     <div class="navbar-collapse collapse">
       <form class="navbar-form navbar-right" role="form">
-        <% if user_signed_in? %>
-            <%= link_to "Notifications", users_notifications_path, class: "btn btn-default" %>
-            <span class="badge"><%= @count_notifications %></span> |
-            <span class="starter-template color-text">Signed in as <%= current_user.email %>. Not you?</span> |
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
-        <% else %>
-            <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
-            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
-        <% end %>
+        <%= link_to "Notifications", users_notifications_path, class: "btn btn-default" %>
+        <span class="badge"><%= @count_notifications %></span> |
+        <span class="starter-template color-text">Signed in as <%= current_user.email %>. Not you?</span> |
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
       </form>
     </div><!--/.navbar-collapse -->
   </div>

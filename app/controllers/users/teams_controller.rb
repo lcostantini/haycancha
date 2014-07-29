@@ -1,6 +1,5 @@
-class Users::TeamsController < ApplicationController
+class Users::TeamsController < Users::ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
-  layout "users/layouts/application"
 
   # GET /teams
   # GET /teams.json
