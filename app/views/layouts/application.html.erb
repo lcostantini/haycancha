@@ -8,25 +8,7 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <%= link_to "Home", root_path, class: "navbar-brand" %>
-    </div>
-    <div class="navbar-form navbar-right">
-      <%= link_to "Not registered?", new_user_registration_path %> |
-      <%= form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
-        <%= f.email_field :email, autofocus: true, :placeholder => "Email", :class => "form-control" %>
-        <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "form-control" %>
-        <%= f.submit "Sign in", :class => "btn btn-success" %>
-      <% end %>
-      <%= link_to "Owners", owners_home_welcome_path, class: "btn btn-primary" %>
-    </div>
-  </div>
-</div>
+<%= render 'navbar' %>
 
 <div class="container">
   <%= yield %>

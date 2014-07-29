@@ -8,22 +8,7 @@
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <%= link_to "Home", owners_home_welcome_path, class: "navbar-brand" %>
-    </div>
-    <div class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right" role="form">
-        <span class="starter-template color-text">Signed in as <%= current_owner.email %>. Not you?</span> |
-        <%= link_to "Sign out", destroy_owner_session_path, method: :delete, class: "btn btn-danger" %>
-      </form>
-    </div>
-  </div>
-</div>
+<%= render 'navbar' %>
 
 <div class="container">
   <%= yield %>
