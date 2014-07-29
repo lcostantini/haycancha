@@ -23,8 +23,9 @@
     <div class="navbar-collapse collapse">
       <form class="navbar-form navbar-right" role="form">
         <% if user_signed_in? %>
-            <%= link_to "Notification", users_notifications_path, class: "btn btn-danger" %>
-            Signed in as <%= current_user.email %>. Not you? |
+            <%= link_to "Notifications", users_notifications_path, class: "btn btn-default" %>
+            <span class="badge"><%= @count_notifications %></span> |
+            <span class="starter-template color-text">Signed in as <%= current_user.email %>. Not you?</span> |
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
         <% else %>
             <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>

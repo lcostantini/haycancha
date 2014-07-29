@@ -2,6 +2,8 @@ class Notification < ActiveRecord::Base
   belongs_to :user
   belongs_to :team
 
+  scope :waiting, ->{where(state: :waiting)}
+
   validates :user, presence: true
 
   def self.start user, team

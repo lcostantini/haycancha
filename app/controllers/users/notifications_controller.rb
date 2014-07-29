@@ -2,8 +2,8 @@ class Users::NotificationsController < ApplicationController
   layout "users/layouts/application"
 
   def index
-    @notifications = current_user.notifications
-    @count = @notifications.length
+    @notifications = current_user.notifications.waiting
+    @count_notifications = @notifications.length
   end
 
   def new

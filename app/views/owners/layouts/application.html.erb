@@ -23,7 +23,7 @@
     <div class="navbar-collapse collapse">
       <form class="navbar-form navbar-right" role="form">
         <% if owner_signed_in? %>
-            Signed in as <%= current_owner.email %>. Not you? |
+            <span class="starter-template color-text">Signed in as <%= current_owner.email %>. Not you?</span> |
             <%= link_to "Sign out", destroy_owner_session_path, method: :delete, class: "btn btn-danger" %>
         <% end %>
       </form>
