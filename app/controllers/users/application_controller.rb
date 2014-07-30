@@ -4,4 +4,9 @@ class Users::ApplicationController < ApplicationController
   layout "users/layouts/application"
 
   before_action :authenticate_user!
+
+  def count_notifications
+    @count_notifications = current_user.notifications.waiting.count
+  end
+
 end

@@ -2,7 +2,6 @@ class Users::NotificationsController < Users::ApplicationController
 
   def index
     @notifications = current_user.notifications.waiting
-    #@count_notifications = @notifications.length
   end
 
   def new
