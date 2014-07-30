@@ -1,6 +1,10 @@
 class Users::EventsController < Users::ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @events = Event.where("team_id = ?", params[:team_id])
+  end
+
   def new
     @event = Event.new team_id: params[:team_id]
   end
