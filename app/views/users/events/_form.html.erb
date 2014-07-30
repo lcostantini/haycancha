@@ -1,0 +1,15 @@
+<%= form_for([:users, :team, @event], :html => {:class => "form-newfield"}) do |f| %>
+  <%= f.hidden_field :team_id %>
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Name", :class => "form-control" %>
+  </div> <br>
+  <div class="field">
+    <%= f.date_select :date, :placeholder => "Date", :class => "form-control" %>
+  </div> <br>
+  <div class="field">
+    <%= f.time_select :time, :placeholder => "Time", :class => "form-control" %>
+  </div> <br>
+  <div class="actions">
+    <%= f.submit "Add event", :class => "btn btn-lg btn-primary btn-block" %>
+  </div>
+<% end %>

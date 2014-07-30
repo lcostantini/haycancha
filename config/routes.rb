@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
     resources :teams do
       resources :notifications
+      resources :events do
+        resources :responses
+      end
     end
 
   end
