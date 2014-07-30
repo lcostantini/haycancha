@@ -1,13 +1,3 @@
 <h1> Welcome Owners </h1>
-<% if owner_signed_in? %>
-    <%= link_to "Fields", owners_fields_path, class: "btn btn-lg btn-primary" %>
-<% else %>
-  <div class="row marketing">
-    <div class="col-lg-6">
-      <%= render partial: 'devise/sessions/form', locals: { resource: Owner.new, resource_name: :owner } %>
-    </div>
-    <div class="col-lg-6">
-      <%= render partial: 'devise/registrations/form', locals: { resource: Owner.new, resource_name: :owner } %>
-    </div>
-  </div>
-<% end %>
+
+<%= link_to "Fields", owners_fields_path, class: "btn btn-lg btn-primary" %>
