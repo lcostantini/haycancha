@@ -5,7 +5,7 @@
     </div>
     <div class="navbar-form navbar-right">
       <%= link_to "Notifications", users_notifications_path %>
-      <span class="badge"><%= controller.count_notifications %></span> |
+      <span class="badge"><%= controller.total_notifications %></span> |
       <span class="starter-template color-text">Signed in as <%= current_user.email %>. Not you?</span> |
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
     </div>

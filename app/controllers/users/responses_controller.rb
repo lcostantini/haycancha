@@ -1,7 +1,7 @@
 class Users::ResponsesController < Users::ApplicationController
 
   def index
-    @responses = Response.all
+    @responses = current_user.responses.waiting
   end
 
   def new

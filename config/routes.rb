@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       post 'accept'
       post 'cancel'
     end
+    resources :responses do
+      post 'accept'
+      post 'cancel'
+    end
     resources :teams do
       resources :notifications
       resources :events do
