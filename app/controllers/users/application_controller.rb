@@ -5,14 +5,4 @@ class Users::ApplicationController < ApplicationController
 
   before_action :authenticate_user!
 
-  def total_notifications
-    @count_notifications = current_user.notifications.waiting.count
-    @count_responses = current_user.responses.waiting.count
-    @total_notifications = @count_notifications + @count_responses
-  end
-
-  def user_responses
-    @responses = current_user.responses.waiting
-  end
-
 end

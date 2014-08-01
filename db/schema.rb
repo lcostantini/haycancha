@@ -11,16 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730142712) do
+ActiveRecord::Schema.define(version: 20140731170920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: true do |t|
-    t.string  "name"
-    t.date    "date"
-    t.time    "time"
-    t.integer "team_id"
+    t.string   "name"
+    t.integer  "team_id"
+    t.datetime "created_for"
   end
 
   add_index "events", ["team_id"], name: "index_events_on_team_id", using: :btree

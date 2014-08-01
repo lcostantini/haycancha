@@ -1,5 +1,5 @@
 <div class="starter-template"><h1 class="sub-header"><%= @team.name %></h1></div>
-<h2 class="sub-header">Listing Players</h2>
+<h2 class="text-center">Listing Players</h2>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
@@ -18,5 +18,5 @@
   </table>
 </div>
 
-<%= link_to 'Reservation', users_team_events_path(@team), class: "btn btn-success" %> |
+<%= link_to 'Reservations', users_team_events_path(@team), class: "btn btn-success" %> |
 <%= link_to 'Back', users_teams_path, class: "btn btn-default" %>

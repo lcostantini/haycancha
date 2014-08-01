@@ -1,20 +1,18 @@
-<h1 class="sub-header">Listing Responses</h1>
+<br><br><h1 class="text-center">Events invitations</h1><br>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Date</th>
-        <th>Time</th>
+        <th>Date and Time</th>
         <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
-      <% controller.user_responses.each do |response| %>
+      <% current_user.user_responses.each do |response| %>
         <tr>
           <td><%= response.event.name %></td>
-          <td><%= response.event.date %></td>
-          <td><%= response.event.time %></td>
+          <td><%= response.event.created_for %></td>
           <td><%= link_to 'Acept', users_response_accept_path(response), method: :post, class: "btn btn-xs btn-info" %></td>
           <td><%= link_to 'Cancel', users_response_cancel_path(response), method: :post, class: "btn btn-xs btn-danger" %></td>
         </tr>
@@ -22,5 +20,6 @@
     </tbody>
   </table>
   <br>
-  <%= link_to 'Back', users_teams_path, class: "btn btn-default" %>
 </div>
+
+<br><br><%= link_to 'Back', users_teams_path, class: "btn btn-default" %>

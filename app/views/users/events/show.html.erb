@@ -1,0 +1,24 @@
+<h1 class="text-center">Name: <%= @event.name %></h1>
+<h2 class="text-center">Date and Time: <%= @event.created_for %></h2>
+<br><br>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Players</th>
+      <th>Responses</th>
+      <th colspan="2"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @event.users.each do |player| %>
+        <tr class="<%= player.events_state(@event) %>">
+          <td><%= player.email %></td>
+          <td><%= player.events_state(@event) %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<br>
+<%= link_to 'Back', users_team_events_path, class: "btn btn-default" %>

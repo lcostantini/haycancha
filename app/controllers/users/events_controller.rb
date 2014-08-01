@@ -2,7 +2,8 @@ class Users::EventsController < Users::ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.where("team_id = ?", params[:team_id])
+    @team = Team.find(params[:team_id])
+    @events = @team.events
   end
 
   def new
@@ -26,7 +27,7 @@ class Users::EventsController < Users::ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :date, :time, :team_id)
+    params.require(:event).permit(:name, :team_id, :created_for)
   end
 
 end

@@ -4,12 +4,9 @@
     <%= f.text_field :name, :placeholder => "Name", :class => "form-control" %>
   </div> <br>
   <div class="field">
-    <%= f.date_select :date, :placeholder => "Date", :class => "form-control" %>
-  </div> <br>
-  <div class="field">
-    <%= f.time_select :time, :placeholder => "Time", :class => "form-control" %>
+    <%= f.datetime_select :created_for, :placeholder => "Date and Time", :class => "form-control" %>
   </div> <br>
   <div class="actions">
-    <%= f.submit "Add event", :class => "btn btn-lg btn-primary btn-block" %>
+    <%= f.submit "Reserved", :class => "btn btn-lg btn-primary btn-block" %>
   </div>
 <% end %>

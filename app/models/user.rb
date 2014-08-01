@@ -8,4 +8,20 @@ class User < ActiveRecord::Base
   has_many :notifications
   has_many :responses
   has_many :events, through: :responses
+
+
+  def total_notifications
+    count_notifications = notifications.waiting.count
+    count_responses = responses.waiting.count
+    count_notifications + count_responses
+  end
+
+  def user_responses
+    responses.waiting
+  end
+
+  def events_state(event)
+    responses.where(event: event).first.state
+  end
+
 end
