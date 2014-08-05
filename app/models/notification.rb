@@ -7,7 +7,7 @@ class Notification < ActiveRecord::Base
   validates :user, presence: true
 
   def self.start user, team
-    @notification = Notification.create({user: user, team: team, state: :waiting})
+    Notification.create({user: user, team: team, state: :waiting})
   end
 
   def accept!
@@ -28,6 +28,8 @@ class Notification < ActiveRecord::Base
   def email= email
     self.user = User.find_by_email email
   end
+
+  #delegate :email, to: :user, allow_nil: true, prefix: false
 
   def email
     user.email if user

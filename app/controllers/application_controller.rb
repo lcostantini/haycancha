@@ -6,9 +6,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if resource.is_a?(Owner)
       owners_fields_path
-    else if resource.is_a?(User)
+    elsif resource.is_a?(User)
       users_home_welcome_path
-    end
     end
   end
 end

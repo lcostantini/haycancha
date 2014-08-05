@@ -1,5 +1,4 @@
 class Users::EventsController < Users::ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @team = Team.find(params[:team_id])
@@ -22,12 +21,9 @@ class Users::EventsController < Users::ApplicationController
   end
 
   private
-  def set_event
-    @event = Event.find(params[:id])
-  end
 
-  def event_params
-    params.require(:event).permit(:name, :team_id, :created_for)
-  end
+    def event_params
+      params.require(:event).permit(:name, :team_id, :created_for)
+    end
 
 end

@@ -7,13 +7,11 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :teams
   has_many :notifications
   has_many :responses
-  has_many :events, through: :responses
+  #has_many :events, through: :responses
 
 
   def total_notifications
-    count_notifications = notifications.waiting.count
-    count_responses = responses.waiting.count
-    count_notifications + count_responses
+    notifications.waiting.count + responses.waiting.count
   end
 
   def user_responses
