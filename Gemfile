@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
 gem 'devise'
 gem 'rails', '4.1.4'
 gem 'pg'
@@ -17,3 +18,5 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'pry'
 end
+
+gem 'rails_12factor', group: :production
