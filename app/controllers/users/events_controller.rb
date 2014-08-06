@@ -1,5 +1,5 @@
 class Users::EventsController < Users::ApplicationController
-  before_action :set_event
+  before_action :set_event, only: [:show]
 
   def index
     @team = Team.find(params[:team_id])
