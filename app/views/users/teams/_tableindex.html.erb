@@ -1,22 +1,20 @@
 <div class="starter-template"><h1 class="sub-header">Listing teams</h1></div>
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
+<table class="table">
+  <thead>
+    <tr>
+      <th><span class="text-size">Name</span></th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
       <tr>
-        <th>Name</th>
-        <th colspan="5"></th>
+        <td><span class="text-size"><%= team.name %></span></td>
+        <td><%= link_to 'Field reserve', new_users_team_event_path(team), class: "btn btn-danger" %></td>
+        <td><%= link_to 'Show', users_team_path(team), class: "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_users_team_path(team), class: "btn btn-warning" %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @teams.each do |team| %>
-        <tr>
-          <td><span class="text-size"><%= team.name %></td></span>
-          <td><%= link_to 'Field reserve', new_users_team_event_path(team), class: "btn btn-danger" %></td>
-          <td><%= link_to 'Show', users_team_path(team), class: "btn btn-info" %></td>
-          <td><%= link_to 'Edit', edit_users_team_path(team), class: "btn btn-warning" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br><%= link_to 'New Team', new_users_team_path, class: "btn btn-success" %>
-</div>
+    <% end %>
+  </tbody>
+</table>
+<br><%= link_to 'New Team', new_users_team_path, class: "btn btn-success" %>

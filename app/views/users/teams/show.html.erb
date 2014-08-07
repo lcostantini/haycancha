@@ -1,25 +1,24 @@
-<div class="starter-template"><h1 class="sub-header"><%= @team.name %></h1></div>
+<br><br><div class="text-center"><h1 class="sub-header"><%= @team.name %></h1></div><br>
 <h2 class="text-center">Listing Players</h2><br><br>
 <div class="col-md-4 column">
 </div>
 <div class="col-md-4 column">
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><span class="text-size">Mail</span></th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @team.users.each do |team_user| %>
         <tr>
-          <th>Mail</th>
-          <th colspan="1"></th>
+          <td><span class="text-size"><%= team_user.email %></span></td>
         </tr>
-      </thead>
-      <tbody>
-        <% @team.users.each do |team_user| %>
-          <tr>
-            <td><%= team_user.email%></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div><br><br>
+      <% end %>
+    </tbody>
+  </table>
+  <br><br>
   <%= link_to 'Add Players', new_users_team_notification_path(@team), class: "btn btn-success" %> |
   <%= link_to 'Show Reservations', users_team_events_path(@team), class: "btn btn-info" %> |
   <%= link_to 'Back', users_teams_path, class: "btn btn-default" %>
