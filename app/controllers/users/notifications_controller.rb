@@ -13,7 +13,7 @@ class Users::NotificationsController < Users::ApplicationController
     respond_to do |format|
       if @notification.save
         UserMailer.invited_email(@notification.user, current_user).deliver
-        format.html { redirect_to users_teams_path }
+        format.html { redirect_to users_teams_path, notice: 'Player was successfully invited.' }
       else
         format.html { render :new }
       end
@@ -31,12 +31,6 @@ class Users::NotificationsController < Users::ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_notification
-      @notification = Notification.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
     def notification_params
       params.require(:notification).permit(:user_id, :team_id, :state, :email)
     end

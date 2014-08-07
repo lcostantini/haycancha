@@ -24,10 +24,6 @@ class Users::ResponsesController < Users::ApplicationController
   end
 
   private
-    def set_response
-      @response = Response.find(params[:id])
-    end
-
     def response_params
       params.require(:response).permit(:event_id, :user_id, :state)
     end

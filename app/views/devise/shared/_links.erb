@@ -1,7 +1,7 @@
 <div class="form-signin">
 
     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn-warning" %><br />
     <% end -%>
 
     <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

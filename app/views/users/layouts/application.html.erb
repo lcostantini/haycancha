@@ -9,7 +9,9 @@
 <body>
 
 <%= render 'navbar' %>
-
+<% if flash[:notice] %>
+    <br><p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
 <div class="container">
   <%= yield %>
 </div>
