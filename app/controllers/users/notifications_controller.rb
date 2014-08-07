@@ -12,6 +12,7 @@ class Users::NotificationsController < Users::ApplicationController
     @notification = Notification.new(notification_params)
     respond_to do |format|
       if @notification.save
+        UserMailer.invited_email(@notification.user, current_user).deliver
         format.html { redirect_to users_teams_path }
       else
         format.html { render :new }
