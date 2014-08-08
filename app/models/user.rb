@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :teams
   has_many :notifications
   has_many :responses
-  #has_many :events, through: :responses
+  has_many :events, through: :responses
 
 
   def total_notifications

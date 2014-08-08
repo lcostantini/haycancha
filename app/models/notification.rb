@@ -13,6 +13,7 @@ class Notification < ActiveRecord::Base
   def accept!
     self.state = :accepted
     join_team
+    join_event
     save
   end
 
@@ -33,6 +34,11 @@ class Notification < ActiveRecord::Base
 
   def email
     user.email if user
+  end
+
+  def join_event
+    return unless team.events.last
+    team.events.last.responses.create user: user
   end
 
 end

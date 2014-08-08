@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
   after_create :send_invitation!
 
   def send_invitation!
+    return unless team
+    return unless team.users
     team.users.each do |user|
       responses.create user: user
     end

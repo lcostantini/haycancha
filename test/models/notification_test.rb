@@ -3,9 +3,8 @@ require 'test_helper'
 class NotificationTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.create({email: 'qwe@qwe.com', password: 'password'})
+    @user = User.create({email: 'user@user.com', password: 'password'})
     @team = Team.create({name: 'my team'})
-    @notification = Notification.new({user_id: 1, team_id: 11, state: :waiting})
   end
 
   test 'user notifications' do
@@ -33,9 +32,16 @@ class NotificationTest < ActiveSupport::TestCase
 
   test 'associates user when passing an email' do
     notification = Notification.new team: @team
-    notification.email = 'qwe@qwe.com'
+    notification.email = 'user@user.com'
     notification.save
     assert notification.user
+  end
+
+  test 'invite a player to a team and a event previously created' do
+    event = Event.create({name: 'Marangoni', team: @team, created_for: '2020-08-06 23:00:00'})
+    notification = Notification.create({ user: @user, team: @team })
+    notification.accept!
+    assert @user.events.include? event
   end
 
 end
