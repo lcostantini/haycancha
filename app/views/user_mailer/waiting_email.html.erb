@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.email %>!</h1>
+    <p>You have a event pending for <%= @event.created_for %> in <%= @event.name %>.<br></p>
+    <p>To respond, just follow this link: <%= @url %>.</p>
+    <p>Have a great day!</p>
+  </body>
+</html>

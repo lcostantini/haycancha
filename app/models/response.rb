@@ -2,7 +2,7 @@ class Response < ActiveRecord::Base
   belongs_to :event
   belongs_to :user
 
-  scope :waiting, ->{ where(state: :waiting) }
+  scope :waiting, -> { where(state: :waiting) }
 
   before_create :set_state!
 
@@ -18,6 +18,14 @@ class Response < ActiveRecord::Base
   def cancel!
     self.state = :canceled
     save
+  end
+
+  def responses_waiting
+    Event.vigente.each do |event|
+      event.responses.waiting.each do |response|
+        UserMailer.waiting_email(event, response.user).deliver
+      end
+    end
   end
 
 end

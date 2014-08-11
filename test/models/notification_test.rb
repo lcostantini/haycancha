@@ -38,10 +38,18 @@ class NotificationTest < ActiveSupport::TestCase
   end
 
   test 'invite a player to a team and a event previously created' do
-    event = Event.create({name: 'Marangoni', team: @team, created_for: '2020-08-06 23:00:00'})
     notification = Notification.create({ user: @user, team: @team })
     notification.accept!
+    event = Event.create({name: 'Marangoni', team: @team, created_for: Time.now + 1.day})
     assert @user.events.include? event
+  end
+
+  test 'send a email to a player when a event is created' do
+    notification = Notification.create({ user: @user, team: @team })
+    notification.accept!
+    Event.create({name: 'Marangoni', team: @team, created_for: Time.now - 1.day})
+    mail = ActionMailer::Base.deliveries.last
+    assert_equal 'user@user.com', mail['to'].to_s
   end
 
 end
