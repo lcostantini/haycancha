@@ -1,0 +1,5 @@
+<table class="table">
+  <tbody>
+    <%= render partial: 'users/notifications/notifications', locals: {notifications: current_user.notifications_waiting} %>
+  </tbody>
+</table>

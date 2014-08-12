@@ -1,6 +1,6 @@
 <br><br><h1 class="text-center">Teams invitations</h1><br>
 <div class="table-responsive">
-  <table class="table table-striped">
+  <table class="table">
     <thead>
       <tr>
         <th>Team name</th>
@@ -8,16 +8,9 @@
       </tr>
     </thead>
     <tbody>
-      <% @notifications.each do |notification| %>
-        <tr>
-          <td><%= notification.team.name %></td>
-          <td><%= link_to 'Acept', users_notification_accept_path(notification), method: :post, class: "btn btn-xs btn-info" %></td>
-          <td><%= link_to 'Cancel', users_notification_cancel_path(notification), method: :post, class: "btn btn-xs btn-danger" %></td>
-        </tr>
-      <% end %>
+      <%= render partial: 'users/notifications/notifications', locals: {notifications: current_user.notifications} %>
     </tbody>
   </table>
   <br>
 </div>
-
 <%= render 'users/responses/index' %>

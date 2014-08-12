@@ -1,0 +1,10 @@
+<% notifications.each do |notification| %>
+  <tr class="<%= notification.state %>">
+    <td><%= notification.team.name %></td>
+    <td><%= notification.state %></td>
+    <% unless notification.state == 'accepted' || notification.state == 'canceled' %>
+      <td><%= link_to '', users_notification_accept_path(notification), method: :post, class: "fa fa-check fa-2x" %></td>
+      <td><%= link_to '', users_notification_cancel_path(notification), method: :post, class: "fa fa-times fa-2x" %></td>
+    <% end %>
+  </tr>
+<% end %>

@@ -4,10 +4,18 @@
       <%= link_to "Home", users_home_welcome_path, class: "navbar-brand" %>
     </div>
     <div class="navbar-form navbar-right">
-      <%= link_to "", users_notifications_path, class: "fa fa-envelope fa-2x" %> |
-      <span class="badge"><%= current_user.total_notifications %></span> |
-      <span class="starter-template color-text">Signed in as <%= current_user.email %>. Not you?</span>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+      <span class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-envelope fa-2x"></i>
+          <span class="badge"><%= current_user.total_notifications %></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><%= render 'users/notifications/dropdown_notifications' %></li>
+          <li><%= render 'users/responses/dropdown_responses' %></li>
+        </ul>
+      </span>
+      <span class="starter-template color-text">Signed in as <%= link_to current_user.email, edit_user_registration_path %>. Not you?</span>
+      <%= link_to '', destroy_user_session_path, method: :delete, class: "fa fa-power-off fa-2x" %>
     </div>
   </div>
 </div>

@@ -1,0 +1,11 @@
+<% responses.each do |response| %>
+  <tr class="<%= response.state %>">
+    <td><%= response.event.name %></td>
+    <td><%= response.event.created_for %></td>
+    <td><%= response.state %></td>
+    <% unless response.state == 'accepted' || response.state == 'canceled' %>
+      <td><%= link_to '', users_response_accept_path(response), method: :post, class: "fa fa-check fa-2x" %></td>
+      <td><%= link_to '', users_response_cancel_path(response), method: :post, class: "fa fa-times fa-2x" %></td>
+    <% end %>
+  </tr>
+<% end %>

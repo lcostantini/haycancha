@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(Owner)
       owners_fields_path
     elsif resource.is_a?(User)
-      users_teams_path
+      users_home_welcome_path
     end
   end
 end

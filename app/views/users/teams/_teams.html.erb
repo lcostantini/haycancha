@@ -1,0 +1,12 @@
+<h3 class="text-center"><%= link_to 'Teams', users_teams_path %></h3>
+<table class="table table-bordered">
+  <tbody>
+    <% current_user.teams.each do |team| %>
+      <tr>
+        <td><span class="text-size"><%= link_to team.name, users_team_path(team) %></span></td>
+        <td><%= link_to '', new_users_team_event_path(team), class: 'fa fa-calendar fa-2x' %></td>
+        <td><%= link_to '', edit_users_team_path(team), class: 'fa fa-pencil fa-2x' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

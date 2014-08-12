@@ -1,0 +1,10 @@
+<div class="text-center"><h3><%= link_to 'Notifications', users_notifications_path %></h3></div>
+<% if current_user.notifications_waiting.empty? %>
+    <h4>You don't have any new notifications</h4>
+<% else %>
+  <table class="table table-bordered">
+    <tbody>
+      <%= render partial: 'users/notifications/notifications', locals: {notifications: current_user.notifications_waiting} %>
+    </tbody>
+  </table>
+<% end %>

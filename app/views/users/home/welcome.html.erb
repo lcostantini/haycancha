@@ -1,3 +1,41 @@
-<h1> Welcome Users </h1>
-
-<%=	 link_to "Team", users_teams_path, class: "btn btn-success" %>
+<div class="starter-template"><h1>Welcome <%= current_user.email %></h1></div>
+<div class="row clearfix">
+  <div class="col-md-12 column">
+    <div class="row clearfix">
+      <div class="col-md-6 column">
+        <%= render 'users/teams/teams' %>
+        <div class="row clearfix">
+          <div class="col-md-12 column">
+            <div class="row clearfix">
+              <div class="text-center"><h3>Stats</h3></div>
+              <div class="col-md-4">
+                <%= image_tag('green-circle.png', alt: 'Generic placeholder image', size: '140x140') %>
+                <h4>Shots on goal 70%</h4>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag('yellow-circle.png', alt: 'Generic placeholder image', size: '140x140') %>
+                <h4>Goals scored 65%</h4>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag('red-circle.png', alt: 'Generic placeholder image', size: '140x140') %>
+                <h4>Goal assists 22%</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 column">
+        <div class="row clearfix">
+          <div class="col-md-12 column">
+            <%= render 'users/notifications/welcome_notifications' %>
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="col-md-12 column">
+            <%= render 'users/responses/welcome_responses' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

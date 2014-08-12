@@ -22,4 +22,12 @@ class User < ActiveRecord::Base
     responses.where(event: event).first.state
   end
 
+  def responses_last
+    [responses.last]
+  end
+
+  def notifications_waiting
+    notifications.waiting
+  end
+
 end

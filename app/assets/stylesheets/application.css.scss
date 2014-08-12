@@ -18,15 +18,15 @@
 @import "font-awesome";
 
 .canceled {
-  @extend .danger;
+  background-color: #ac2925;
 }
 
 .accepted {
-  @extend .success;
+  background-color: #67b168;
 }
 
 .waiting {
-  @extend .warning;
+  background-color: #eea236;
 }
 
 body {
@@ -41,6 +41,10 @@ body {
   color: #269abc;
 }
 
-.text-size{
-  font-size: 1.8em;
+.fa-power-off{
+  color: #730E15;
+}
+
+.table-bordered{
+  background-color: #ffffff;
 }
