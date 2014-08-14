@@ -1,4 +1,4 @@
-<div class="text-center"><h3><%= link_to 'Notifications', users_notifications_path %></h3></div>
+<div class="text-center"><h3><%= link_to 'Notifications', users_notifications_path, title: 'show all the notifications and events', rel: 'tooltip' %></h3></div>
 <% if current_user.notifications_waiting.empty? %>
     <h4>You don't have any new notifications</h4>
 <% else %>

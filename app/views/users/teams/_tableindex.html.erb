@@ -2,19 +2,20 @@
 <table class="table">
   <thead>
     <tr>
-      <th><span class="text-size">Name</span></th>
+      <th>Name</th>
       <th colspan="4"></th>
     </tr>
   </thead>
   <tbody>
     <% @teams.each do |team| %>
       <tr>
-        <td><span class="text-size"><%= team.name %></span></td>
-        <td><%= link_to 'Field reserve', new_users_team_event_path(team), class: "btn btn-primary" %></td>
-        <td><%= link_to 'Show', users_team_path(team), class: "btn btn-default" %></td>
-        <td><%= link_to 'Edit', edit_users_team_path(team), class: "btn btn-default" %></td>
+        <td><%= link_to team.name, users_team_path(team), title: 'show the players for this team', rel: 'tooltip' %></td>
+        <td><%= link_to '', new_users_team_event_path(team), class: 'fa fa-calendar fa-2x', title: 'reserve a field for this team', rel: 'tooltip' %></td>
+        <td><%= link_to '', edit_users_team_path(team), class: 'fa fa-pencil fa-2x', title: 'edit the team', rel: 'tooltip' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<br><%= link_to 'New Team', new_users_team_path, class: "btn btn-success" %>
+<br>
+<%= link_to 'New Team', new_users_team_path, class: "btn btn-success" %>
+<%= link_to 'Back', users_home_welcome_path, class: "btn btn-default" %>

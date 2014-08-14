@@ -2,16 +2,17 @@
 <table class="table">
   <thead>
     <tr>
-      <th><span class="text-size">Name</span></th>
-      <th><span class="text-size">Date and Time</span></th>
+      <th>Name</th>
+      <th>Date and Time</th>
+      <th>State</th>
       <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><span class="text-size"><%= event.name %></span></td>
-        <td><span class="text-size"><%= event.created_for %></span></td>
+        <td><%= event.name %></td>
+        <td><%= event.created_for %></td>
         <td><%= link_to 'Show', users_team_event_path(@team, event), class: "btn btn-info" %></td>
       </tr>
     <% end %>

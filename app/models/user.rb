@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :responses
   has_many :events, through: :responses
 
-
   def total_notifications
     notifications.waiting.count + responses.waiting.count
   end
@@ -28,6 +27,10 @@ class User < ActiveRecord::Base
 
   def notifications_waiting
     notifications.waiting
+  end
+
+  def responses_vigente
+    events.vigente
   end
 
 end

@@ -1,6 +1,10 @@
 <div class="text-center"><h3>Event</h3></div>
-<table class="table table-bordered">
-  <tbody>
-    <%= render partial: 'users/responses/responses', locals: {responses: current_user.responses_last} %>
-  </tbody>
-</table>
+<% if current_user.responses_vigente.empty? %>
+    <h4>You don't have any new events</h4>
+<% else %>
+    <table class="table table-bordered">
+      <tbody>
+      <%= render partial: 'users/responses/responses', locals: {responses: current_user.responses_last} %>
+      </tbody>
+    </table>
+<% end %>

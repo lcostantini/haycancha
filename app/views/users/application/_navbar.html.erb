@@ -14,8 +14,8 @@
           <li><%= render 'users/responses/dropdown_responses' %></li>
         </ul>
       </span>
-      <span class="starter-template color-text">Signed in as <%= link_to current_user.email, edit_user_registration_path %>. Not you?</span>
-      <%= link_to '', destroy_user_session_path, method: :delete, class: "fa fa-power-off fa-2x" %>
+      <span class="starter-template color-text">Signed in as <%= link_to current_user.email, edit_user_registration_path, title: 'user profile', rel: 'tooltip' %>. Not you?</span>
+      <%= link_to '', destroy_user_session_path, method: :delete, class: "fa fa-power-off fa-2x", title: 'sign out', rel: 'tooltip' %>
     </div>
   </div>
 </div>
