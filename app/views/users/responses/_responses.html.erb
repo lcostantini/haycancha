@@ -3,7 +3,7 @@
     <td><%= response.event.name %></td>
     <td><%= response.event.created_for %></td>
     <td class="<%= response.state %>"><%= response.state %></td>
-    <% unless response.not_response? %>
+    <% if response.waiting? %>
       <td><%= link_to '', users_response_accept_path(response), method: :post, class: "fa fa-check fa-2x" %></td>
       <td><%= link_to '', users_response_cancel_path(response), method: :post, class: "fa fa-times fa-2x" %></td>
     <% end %>

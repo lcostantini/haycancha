@@ -41,8 +41,8 @@ class Notification < ActiveRecord::Base
     team.events.last.responses.create user: user
   end
 
-  def not_response?
-    notification.state == 'accepted' || notification.state == 'canceled'
+  def waiting?
+    state == 'waiting'
   end
 
 end

@@ -28,8 +28,8 @@ class Response < ActiveRecord::Base
     end
   end
 
-  def not_response?
-    state == 'accepted' || state == 'canceled'
+  def waiting?
+    state == 'waiting'
   end
 
 end

@@ -2,7 +2,7 @@
   <tr class="text-center">
     <td><%= notification.team.name %></td>
     <td><%= notification.state %></td>
-    <% unless notification.not_response? %>
+    <% if notification.waiting? %>
       <td><%= link_to '', users_notification_accept_path(notification), method: :post, class: "fa fa-check" %></td>
       <td><%= link_to '', users_notification_cancel_path(notification), method: :post, class: "fa fa-times" %></td>
     <% end %>
