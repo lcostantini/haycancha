@@ -21,16 +21,23 @@ a:link {
   text-decoration: none;
 }
 
+.extend_label{
+  @extend .label;
+}
+
 .canceled {
-  background-color: #ac2925;
+  @extend .extend_label;
+  @extend .label-danger;
 }
 
 .accepted {
-  background-color: #67b168;
+  @extend .extend_label;
+  @extend .label-success;
 }
 
 .waiting {
-  background-color: #eea236;
+  @extend .extend_label;
+  @extend .label-warning;
 }
 
 body {
