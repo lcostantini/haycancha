@@ -21,16 +21,18 @@ class User < ActiveRecord::Base
     responses.where(event: event).first.state
   end
 
-  def responses_last
-    [responses.last]
-  end
-
   def notifications_waiting
     notifications.waiting
   end
 
-  def responses_vigente
-    events.vigente
+  def events_future
+    events.future
   end
 
+  def responses_two_week_future
+    events.coming_soon.map do |event|
+      event.responses.where(user: self).first
+    end
+  end
+  
 end

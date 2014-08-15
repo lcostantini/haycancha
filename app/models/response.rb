@@ -21,7 +21,7 @@ class Response < ActiveRecord::Base
   end
 
   def responses_waiting
-    Event.vigente.each do |event|
+    Event.future.each do |event|
       event.responses.waiting.each do |response|
         UserMailer.waiting_email(event, response.user).deliver
       end

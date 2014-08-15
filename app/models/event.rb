@@ -3,7 +3,8 @@ class Event < ActiveRecord::Base
   has_many :responses
   has_many :users, through: :responses
 
-  scope :vigente, -> { where('created_for > ?', Time.now) }
+  scope :future, -> { where('created_for > ?', Time.now) }
+  scope :coming_soon, -> { where(created_for: Date.today..2.weeks.from_now) }
 
   after_create :send_invitation!
 
