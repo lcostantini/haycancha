@@ -5,9 +5,9 @@
       <div class="panel-heading">
         <h3 class="panel-title text-center">Teams</h3>
       </div>
-      <div class="panel-body">
+      <table class="table">
         <%= render 'users/teams/teams' %>
-      </div>
+      </table>
     </div>
     <div class="row clearfix">
       <div class="col-md-12 column">
@@ -42,10 +42,10 @@
           <div class="panel-heading">
             <h3 class="panel-title text-center">Notifications</h3>
           </div>
-          <div class="panel-body">
+          <table class="table">
             <%= render 'users/notifications/welcome_notifications' %>
             <%= link_to 'Show notifications', users_notifications_path, title: 'Show all the notifications and events', rel: 'tooltip' %>
-          </div>
+          </table>
         </div>
       </div>
     </div>
@@ -55,9 +55,9 @@
           <div class="panel-heading">
             <h3 class="panel-title text-center">Events</h3>
           </div>
-          <div class="panel-body">
+          <table class="table">
             <%= render 'users/responses/welcome_responses' %>
-          </div>
+          </table>
         </div>
       </div>
     </div>

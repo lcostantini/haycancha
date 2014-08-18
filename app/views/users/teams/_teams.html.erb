@@ -1,11 +1,9 @@
-<table class="table">
-  <tbody>
-    <% current_user.teams.each do |team| %>
-      <tr>
-        <td><%= link_to team.name, users_team_path(team), title: 'show the players for this team', rel: 'tooltip' %></td>
-        <td class="text-center"><%= link_to '', new_users_team_event_path(team), class: 'fa fa-calendar', title: 'reserve a field for this team', rel: 'tooltip' %></td>
-        <td class="text-center"><%= link_to '', edit_users_team_path(team), class: 'fa fa-pencil', title: 'edit the team', rel: 'tooltip' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<tbody>
+  <% current_user.teams.each do |team| %>
+    <tr>
+      <td><%= link_to team.name, users_team_path(team), title: 'show the players for this team', rel: 'tooltip' %></td>
+      <td class="text-center"><%= link_to '', new_users_team_event_path(team), class: 'fa fa-calendar', title: 'reserve a field for this team', rel: 'tooltip' %></td>
+      <td class="text-center"><%= link_to '', edit_users_team_path(team), class: 'fa fa-pencil', title: 'edit the team', rel: 'tooltip' %></td>
+    </tr>
+  <% end %>
+</tbody>
