@@ -1,22 +1,35 @@
 <div class="starter-template"><h1>Welcome <%= current_user.email %></h1></div>
 <div class="row clearfix">
   <div class="col-md-6 column">
-    <%= render 'users/teams/teams' %>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">Teams</h3>
+      </div>
+      <div class="panel-body">
+        <%= render 'users/teams/teams' %>
+      </div>
+    </div>
     <div class="row clearfix">
       <div class="col-md-12 column">
-        <div class="row clearfix">
-          <div class="text-center"><h3>User stats</h3></div>
-          <div class="col-md-4">
-            <%= image_tag('green-circle.png', class: 'stats') %>
-            <h4>Shots on goal 70%</h4>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">User stats</h3>
           </div>
-          <div class="col-md-4">
-            <%= image_tag('yellow-circle.png', class: 'stats') %>
-            <h4>Goals scored 65%</h4>
-          </div>
-          <div class="col-md-4">
-            <%= image_tag('red-circle.png', class: 'stats') %>
-            <h4>Goal assists 22%</h4>
+          <div class="panel-body">
+            <div class="row clearfix">
+              <div class="col-md-4">
+                <%= image_tag('green-circle.png', class: 'stats') %>
+                <h4>Shots on goal 70%</h4>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag('yellow-circle.png', class: 'stats') %>
+                <h4>Goals scored 65%</h4>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag('red-circle.png', class: 'stats') %>
+                <h4>Goal assists 22%</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -25,12 +38,27 @@
   <div class="col-md-6 column">
     <div class="row clearfix">
       <div class="col-md-12 column">
-        <%= render 'users/notifications/welcome_notifications' %>
+        <div class="panel panel-warning">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Notifications</h3>
+          </div>
+          <div class="panel-body">
+            <%= render 'users/notifications/welcome_notifications' %>
+            <%= link_to 'Show notifications', users_notifications_path, title: 'Show all the notifications and events', rel: 'tooltip' %>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row clearfix">
       <div class="col-md-12 column">
-        <%= render 'users/responses/welcome_responses' %>
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Events</h3>
+          </div>
+          <div class="panel-body">
+            <%= render 'users/responses/welcome_responses' %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

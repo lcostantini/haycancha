@@ -1,10 +1,9 @@
-<div class="text-center"><h3>Event</h3></div>
 <% if current_user.events_future.empty? %>
     <h4>You don't have any new events</h4>
 <% else %>
-    <table class="table table-bordered">
-      <tbody>
+  <table class="table">
+    <tbody>
       <%= render partial: 'users/responses/responses', locals: {responses: current_user.responses_two_week_future} %>
-      </tbody>
-    </table>
+    </tbody>
+  </table>
 <% end %>
