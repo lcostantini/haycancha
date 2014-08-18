@@ -1,40 +1,36 @@
 <div class="starter-template"><h1>Welcome <%= current_user.email %></h1></div>
 <div class="row clearfix">
-  <div class="col-md-12 column">
+  <div class="col-md-6 column">
+    <%= render 'users/teams/teams' %>
     <div class="row clearfix">
-      <div class="col-md-6 column">
-        <%= render 'users/teams/teams' %>
+      <div class="col-md-12 column">
         <div class="row clearfix">
-          <div class="col-md-12 column">
-            <div class="row clearfix">
-              <div class="text-center"><h3>User stats</h3></div>
-              <div class="col-md-4">
-                <%= image_tag('green-circle.png', class: 'stats') %>
-                <h4>Shots on goal 70%</h4>
-              </div>
-              <div class="col-md-4">
-                <%= image_tag('yellow-circle.png', class: 'stats') %>
-                <h4>Goals scored 65%</h4>
-              </div>
-              <div class="col-md-4">
-                <%= image_tag('red-circle.png', class: 'stats') %>
-                <h4>Goal assists 22%</h4>
-              </div>
-            </div>
+          <div class="text-center"><h3>User stats</h3></div>
+          <div class="col-md-4">
+            <%= image_tag('green-circle.png', class: 'stats') %>
+            <h4>Shots on goal 70%</h4>
+          </div>
+          <div class="col-md-4">
+            <%= image_tag('yellow-circle.png', class: 'stats') %>
+            <h4>Goals scored 65%</h4>
+          </div>
+          <div class="col-md-4">
+            <%= image_tag('red-circle.png', class: 'stats') %>
+            <h4>Goal assists 22%</h4>
           </div>
         </div>
       </div>
-      <div class="col-md-6 column">
-        <div class="row clearfix">
-          <div class="col-md-12 column">
-            <%= render 'users/notifications/welcome_notifications' %>
-          </div>
-        </div>
-        <div class="row clearfix">
-          <div class="col-md-12 column">
-            <%= render 'users/responses/welcome_responses' %>
-          </div>
-        </div>
+    </div>
+  </div>
+  <div class="col-md-6 column">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <%= render 'users/notifications/welcome_notifications' %>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <%= render 'users/responses/welcome_responses' %>
       </div>
     </div>
   </div>
