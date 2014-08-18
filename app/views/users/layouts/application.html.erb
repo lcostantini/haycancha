@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Futbol</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= render 'navbar' %>
-<% if flash[:notice] %>
-    <br><p class="alert alert-success"><%= flash[:notice] %></p>
-<% end %>
-<div class="container">
-  <%= yield %>
-</div>
-
-</body>
+  <head>
+    <title>Futbol</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'navbar' %>
+    <% if flash[:notice] %>
+      <br><p class="alert alert-success"><%= flash[:notice] %></p>
+    <% end %>
+      <div class="container-background"><%= yield %></div>
+  </body>
 </html>
