@@ -22,10 +22,12 @@ class Users::NotificationsController < Users::ApplicationController
 
   def accept
     Notification.find(params[:notification_id]).accept!
+    redirect_to :back
   end
 
   def cancel
     Notification.find(params[:notification_id]).cancel!
+    redirect_to :back
   end
 
   private

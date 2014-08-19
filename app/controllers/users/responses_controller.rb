@@ -14,11 +14,14 @@ class Users::ResponsesController < Users::ApplicationController
   end
 
   def accept
+    binding.pry
     Response.find(params[:response_id]).accept!
+    redirect_to :back
   end
 
   def cancel
     Response.find(params[:response_id]).cancel!
+    redirect_to :back
   end
 
   private
