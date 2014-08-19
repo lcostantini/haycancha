@@ -1,10 +1,10 @@
 <% notifications.each do |notification| %>
-  <tr class="text-center">
+  <tr>
     <td><%= notification.team.name %></td>
-    <td><%= notification.state %></td>
+    <td><span class="<%= notification.state %>"><%= notification.state %></span></td>
     <% if notification.waiting? %>
-      <td><%= link_to '', users_notification_accept_path(notification), method: :post, class: "fa fa-check" %></td>
-      <td><%= link_to '', users_notification_cancel_path(notification), method: :post, class: "fa fa-times" %></td>
+        <td><%= link_to '', users_response_accept_path(response), method: :post, class: "fa fa-check", title: 'Accept play in this event', rel: 'tooltip' %></td>
+        <td><%= link_to '', users_response_cancel_path(response), method: :post, class: "fa fa-times", title: 'Not playing in this event', rel: 'tooltip' %></td>
     <% end %>
   </tr>
 <% end %>

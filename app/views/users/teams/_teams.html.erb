@@ -2,9 +2,9 @@
   <% current_user.teams.each do |team| %>
     <tr>
       <td><%= link_to team.name, users_team_path(team), title: 'Show the players for this team', rel: 'tooltip' %></td>
-      <td class="text-center"><%= link_to '', new_users_team_event_path(team), class: 'fa fa-calendar', title: 'Reserve a field for this team', rel: 'tooltip' %></td>
-      <td class="text-center"><%= link_to '', new_users_team_notification_path(team), class: 'fa fa-group', title: 'Invite a player to this team', rel: 'tooltip' %></td>
-      <td class="text-center"><%= link_to '', edit_users_team_path(team), class: 'fa fa-pencil', title: 'Edit the team', rel: 'tooltip' %></td>
+      <td><%= link_to '', new_users_team_event_path(team), class: 'fa fa-calendar', title: 'Reserve a field for this team', rel: 'tooltip' %></td>
+      <td><%= link_to '', new_users_team_notification_path(team), class: 'fa fa-plus', title: 'Invite a player to this team', rel: 'tooltip' %></td>
+      <td><%= link_to '', edit_users_team_path(team), class: 'fa fa-pencil', title: 'Edit the team', rel: 'tooltip' %></td>
     </tr>
   <% end %>
 </tbody>
