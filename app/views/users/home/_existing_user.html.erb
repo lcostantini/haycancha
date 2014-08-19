@@ -3,7 +3,7 @@
   <div class="col-md-6 column">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title text-center">Teams</h3>
+        <h3 class="panel-title text-center">Teams <i><%= link_to '', new_users_team_path, class: 'fa fa-plus-square', title: 'Create a new team', rel: 'tooltip' %></i></h3>
       </div>
       <table class="table">
         <%= render 'users/teams/teams' %>
@@ -40,12 +40,11 @@
       <div class="col-md-12 column">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">Invitations</h3>
+            <h3 class="panel-title text-center">Invitations <i><%= link_to '', users_notifications_path, class: 'fa fa-search-plus', title: 'Show all the invitations and events', rel: 'tooltip' %></i></h3>
           </div>
           <table class="table">
             <%= render 'users/notifications/welcome_notifications' %>
           </table>
-          <%= link_to 'Show all', users_notifications_path, title: 'Show all the invitations and events', rel: 'tooltip' %>
         </div>
       </div>
     </div>
@@ -53,12 +52,11 @@
       <div class="col-md-12 column">
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title text-center">Events</h3>
+            <h3 class="panel-title text-center">Events <i><%= link_to '', users_notifications_path, class:'fa fa-search-plus', title: 'Show all the invitations and events', rel: 'tooltip' %></i></h3>
           </div>
           <table class="table">
             <%= render 'users/responses/welcome_responses' %>
           </table>
-          <%= link_to 'Show all', users_notifications_path, title: 'Show all the invitations and events', rel: 'tooltip' %>
         </div>
       </div>
     </div>
