@@ -34,5 +34,13 @@ class User < ActiveRecord::Base
       event.responses.where(user: self).first
     end
   end
-  
+
+  def events_expired_waiting
+    events.expired.map do |event|
+      if events_state(event) == 'waiting'
+        responses.where(event: event).first.expired!
+      end
+    end
+  end
+
 end

@@ -20,6 +20,11 @@ class Response < ActiveRecord::Base
     save
   end
 
+  def expired!
+    self.state = :expired
+    save
+  end
+
   def responses_waiting
     Event.future.each do |event|
       event.responses.waiting.each do |response|

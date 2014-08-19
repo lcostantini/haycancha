@@ -14,7 +14,6 @@ class Users::ResponsesController < Users::ApplicationController
   end
 
   def accept
-    binding.pry
     Response.find(params[:response_id]).accept!
     redirect_to :back
   end

@@ -1,6 +1,7 @@
 class Users::NotificationsController < Users::ApplicationController
 
   def index
+    current_user.events_expired_waiting
     @notifications = current_user.notifications.waiting
   end
 
