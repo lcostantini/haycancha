@@ -1,18 +1,8 @@
 class Users::TeamsController < Users::ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @teams = current_user.teams
-  end
-
-  def show
-  end
-
   def new
     @team = Team.new
-  end
-
-  def edit
   end
 
   def create
