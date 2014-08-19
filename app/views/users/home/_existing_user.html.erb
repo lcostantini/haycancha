@@ -1,0 +1,66 @@
+<div class="starter-template"><h1>Welcome <%= current_user.email %></h1></div>
+<div class="row clearfix">
+  <div class="col-md-6 column">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title text-center">Teams</h3>
+      </div>
+      <table class="table">
+        <%= render 'users/teams/teams' %>
+      </table>
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Your stats</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row clearfix">
+              <div class="col-md-4">
+                <%= image_tag('green-circle.png', class: 'stats') %>
+                <h4>Shots on goal 70%</h4>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag('yellow-circle.png', class: 'stats') %>
+                <h4>Goals scored 65%</h4>
+              </div>
+              <div class="col-md-4">
+                <%= image_tag('red-circle.png', class: 'stats') %>
+                <h4>Goal assists 22%</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 column">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Invitations</h3>
+          </div>
+          <table class="table">
+            <%= render 'users/notifications/welcome_notifications' %>
+          </table>
+          <%= link_to 'Show all', users_notifications_path, title: 'Show all the invitations and events', rel: 'tooltip' %>
+        </div>
+      </div>
+    </div>
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title text-center">Events</h3>
+          </div>
+          <table class="table">
+            <%= render 'users/responses/welcome_responses' %>
+          </table>
+          <%= link_to 'Show all', users_notifications_path, title: 'Show all the invitations and events', rel: 'tooltip' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
