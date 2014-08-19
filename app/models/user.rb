@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
     notifications.waiting.count + responses.waiting.count
   end
 
-  def user_responses
+  def responses_waiting
     responses.waiting
   end
 
