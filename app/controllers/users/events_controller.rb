@@ -14,7 +14,7 @@ class Users::EventsController < Users::ApplicationController
     @event = Event.new(event_params)
     respond_to do |format|
       if @event.save
-        format.html { redirect_to users_teams_path, notice: 'Reserved was successfully created.' }
+        format.html { redirect_to users_home_welcome_path, notice: 'Reserved was successfully created.' }
       else
         format.html { render :new }
       end

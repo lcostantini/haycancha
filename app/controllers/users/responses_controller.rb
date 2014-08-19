@@ -15,12 +15,10 @@ class Users::ResponsesController < Users::ApplicationController
 
   def accept
     Response.find(params[:response_id]).accept!
-    redirect_to users_notifications_path
   end
 
   def cancel
     Response.find(params[:response_id]).cancel!
-    redirect_to users_notifications_path
   end
 
   private

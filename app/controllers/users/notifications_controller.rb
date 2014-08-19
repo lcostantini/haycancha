@@ -13,7 +13,7 @@ class Users::NotificationsController < Users::ApplicationController
     respond_to do |format|
       if @notification.save
         UserMailer.invited_email(@notification.user, current_user).deliver
-        format.html { redirect_to users_teams_path, notice: 'Player was successfully invited.' }
+        format.html { redirect_to users_home_welcome_path, notice: 'Player was successfully invited.' }
       else
         format.html { render :new }
       end
@@ -22,12 +22,10 @@ class Users::NotificationsController < Users::ApplicationController
 
   def accept
     Notification.find(params[:notification_id]).accept!
-    redirect_to users_notifications_path
   end
 
   def cancel
     Notification.find(params[:notification_id]).cancel!
-    redirect_to users_notifications_path
   end
 
   private
