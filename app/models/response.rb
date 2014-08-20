@@ -34,7 +34,9 @@ class Response < ActiveRecord::Base
   end
 
   def waiting?
-    state == 'waiting'
+    if state == 'waiting'
+      Event.future.where(id: event_id).any?
+    end
   end
 
   def team_name
