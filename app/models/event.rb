@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
 
   scope :future, -> { where('created_for > ?', Time.now) }
   scope :coming_soon, -> { where(created_for: Date.today..2.weeks.from_now) }
+  scope :expired, ->{ where('created_for < ?', Time.now) }
 
   after_create :send_invitation!
 

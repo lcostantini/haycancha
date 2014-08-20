@@ -40,6 +40,11 @@ a:link {
   @extend .label-warning;
 }
 
+.expired {
+  @extend .extend_label;
+  @extend .label-default;
+}
+
 body {
   padding-top: 40px;
   padding-bottom: 40px;
