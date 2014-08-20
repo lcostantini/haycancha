@@ -31,9 +31,9 @@ class User < ActiveRecord::Base
     notifications.waiting
   end
 
-  #def events_future
-  #  events.future
-  #end
+  def events_future
+    events.future
+  end
 
   def responses_two_week_future
     events.coming_soon.map do |event|
