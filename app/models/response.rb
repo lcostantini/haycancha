@@ -32,4 +32,8 @@ class Response < ActiveRecord::Base
     state == 'waiting'
   end
 
+  def team_name
+    event.team.name
+  end
+
 end
