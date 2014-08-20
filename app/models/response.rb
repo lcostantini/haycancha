@@ -43,6 +43,14 @@ class Response < ActiveRecord::Base
     state == 'accepted'
   end
 
+  def can_accepted?
+    waiting? || state == 'canceled'
+  end
+
+  def can_canceled?
+    waiting? || state == 'accepted'
+  end
+
   def team_name
     event.team.name
   end
