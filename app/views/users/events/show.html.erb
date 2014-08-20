@@ -5,16 +5,16 @@
 <table class="table">
   <thead>
     <tr>
-      <th><span class="text-size">Players</span></th>
-      <th><span class="text-size">Responses</span></th>
+      <th class="text-center">Players</th>
+      <th class="text-center">Responses</th>
       <th colspan="2"></th>
     </tr>
   </thead>
   <tbody>
     <% @event.users.each do |player| %>
-      <tr class="<%= player.events_state(@event) %>">
-        <td><span class="text-size"><%= player.email %></span></td>
-        <td><span class="text-size"><%= player.events_state(@event) %></span></td>
+      <tr>
+        <td class="text-center"><%= player.email %></td>
+        <td class="text-center"><span class="<%= player.events_state(@event) %>"><%= player.events_state(@event) %></span></td>
       </tr>
     <% end %>
   </tbody>
