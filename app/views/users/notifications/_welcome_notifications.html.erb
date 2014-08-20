@@ -1,7 +1,3 @@
-<% if current_user.notifications_waiting.empty? %>
-    <h4 class="text-center">You don't have any new invitations</h4>
-<% else %>
-  <tbody>
-    <%= render partial: 'users/notifications/notifications', locals: {notifications: current_user.notifications_waiting} %>
-  </tbody>
-<% end %>
+<tbody>
+  <%= render partial: 'users/notifications/notifications', locals: {notifications: current_user.notifications_waiting} %>
+</tbody>
