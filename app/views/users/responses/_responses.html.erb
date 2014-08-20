@@ -7,6 +7,10 @@
     <% if response.waiting? %>
       <td><%= link_to '', users_response_accept_path(response), method: :post, class: "fa fa-check", title: 'Accept play in this event', rel: 'tooltip' %></td>
       <td><%= link_to '', users_response_cancel_path(response), method: :post, class: "fa fa-times", title: 'Not playing in this event', rel: 'tooltip' %></td>
+    <% elsif response.accepted? %>
+      <td><%= link_to '', users_response_cancel_path(response), method: :post, class: "fa fa-times", title: 'Not playing in this event', rel: 'tooltip' %></td>
+    <% else %>
+      <td><%= link_to '', users_response_accept_path(response), method: :post, class: "fa fa-check", title: 'Accept play in this event', rel: 'tooltip' %></td>
     <% end %>
   </tr>
 <% end %>

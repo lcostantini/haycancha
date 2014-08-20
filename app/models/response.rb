@@ -39,6 +39,10 @@ class Response < ActiveRecord::Base
     end
   end
 
+  def accepted?
+    state == 'accepted'
+  end
+
   def team_name
     event.team.name
   end
