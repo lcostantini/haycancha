@@ -10,11 +10,17 @@ class User < ActiveRecord::Base
   has_many :events, through: :responses
 
   def total_notifications
-    notifications.waiting.count + responses.waiting.count
+    notifications.waiting.count + responses_waiting.count
   end
 
   def responses_waiting
-    responses.waiting
+    events_future_waiting.compact
+  end
+
+  def events_future_waiting
+    events.future.map do |event|
+      event.responses.where(user: self, state: :waiting).first
+    end
   end
 
   def events_state(event)
@@ -25,9 +31,9 @@ class User < ActiveRecord::Base
     notifications.waiting
   end
 
-  def events_future
-    events.future
-  end
+  #def events_future
+  #  events.future
+  #end
 
   def responses_two_week_future
     events.coming_soon.map do |event|
