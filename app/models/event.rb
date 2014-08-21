@@ -20,4 +20,16 @@ class Event < ActiveRecord::Base
     UserMailer.waiting_email(self, user).deliver
   end
 
+  def count_accepted?
+    responses.accepted.count
+  end
+
+  def count_waiting?
+    responses.waiting.count
+  end
+
+  def count_canceled?
+    responses.canceled.count
+  end
+
 end

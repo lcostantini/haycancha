@@ -19,7 +19,12 @@
     <% end %>
   </tbody>
 </table>
-<br><div class="text-right"><%= link_to '', :back, class: 'fa fa-arrow-circle-o-left fa-2x' %></div><br><br>
+
+<div><span class="accepted">Accepted: <%= @event.count_accepted? %></span></div><br>
+<div><span class="waiting">Waiting: <%= @event.count_waiting? %></span></div><br>
+<div><span class="canceled">Canceled: <%= @event.count_canceled? %></span></div>
+
+<div class="text-right"><%= link_to '', :back, class: 'fa fa-arrow-circle-o-left fa-2x' %></div><br><br>
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

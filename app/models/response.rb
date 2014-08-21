@@ -3,6 +3,8 @@ class Response < ActiveRecord::Base
   belongs_to :user
 
   scope :waiting, -> { where(state: :waiting) }
+  scope :accepted, -> { where(state: :accepted) }
+  scope :canceled, -> { where(state: :canceled) }
 
   before_create :set_state!
 
