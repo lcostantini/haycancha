@@ -1,5 +1,5 @@
-<br><br><div class="text-center"><h1 class="sub-header"><%= @team.name %></h1></div><br>
-<h2 class="text-center">Listing Players</h2><br><br>
+<br><br><div class="text-center"><h1 class="sub-header"><%= @team.name %> <i><%= link_to '', users_team_events_path(@team), class: 'fa fa-search', title: 'Show all events', rel: 'tooltip' %></i></h1></div><br>
+<h2 class="text-center">Listing Players</h2>
 <div class="col-md-4 column">
 </div>
 <div class="col-md-4 column">
@@ -21,9 +21,7 @@
       <% end %>
     </tbody>
   </table>
-  <br>
-  <%= link_to 'Show all reservations', users_team_events_path(@team), class: "btn btn-info" %>
-  <%= link_to 'Back', users_home_welcome_path, class: "btn btn-default" %>
+  <div class="text-right"><%= link_to '', users_home_welcome_path, class: 'fa fa-arrow-circle-o-left fa-2x' %></div>
 </div>
 <div class="col-md-4 column">
 </div>
