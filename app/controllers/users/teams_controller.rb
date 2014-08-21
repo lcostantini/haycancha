@@ -33,9 +33,9 @@ class Users::TeamsController < Users::ApplicationController
   end
 
   def destroy
-    @team.destroy
+    @team.users.delete(User.find_by(id: current_user))
     respond_to do |format|
-      format.html { redirect_to users_home_welcome_path, notice: 'Team was successfully destroyed.' }
+      format.html { redirect_to users_home_welcome_path, notice: 'Left the team successfully.' }
       format.json { head :no_content }
     end
   end

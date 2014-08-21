@@ -14,6 +14,9 @@
       <% @team.users.each do |team_user| %>
         <tr>
           <td><span class="text-size"><%= team_user.email %></span></td>
+          <% if current_user.email_equal_to(team_user) %>
+            <td><%= link_to '', users_team_path, method: :delete, class: 'fa fa-ban', title: 'Leave this team', rel: 'tooltip' %> </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

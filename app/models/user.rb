@@ -48,5 +48,9 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def email_equal_to(team_user)
+    email == team_user.email
+  end
   
 end
