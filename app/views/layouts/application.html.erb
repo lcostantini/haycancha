@@ -7,7 +7,11 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'navbar' %>
+    <% if user_signed_in? %>
+        <%= render 'users/application/navbar' %>
+    <% else %>
+        <%= render 'navbar' %>
+    <% end %>
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end %>
