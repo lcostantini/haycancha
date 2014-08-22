@@ -84,6 +84,6 @@ body {
 
 .container-background{
   @extend .container;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.7);
   padding-bottom: 40px;
 }
