@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render partial: 'users/responses/responses', locals: { responses: current_user.order_responses(params[:sort], params[:direction]) } %>
+      <%= render partial: 'users/responses/responses', locals: { responses: @sort_responses } %>
     </tbody>
   </table>
   <br>

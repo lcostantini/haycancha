@@ -1,7 +1,10 @@
 class Users::NotificationsController < Users::ApplicationController
 
+  helper_method :sort_column, :sort_direction
+
   def index
     @notifications = current_user.notifications.waiting
+    @sort_responses = current_user.order_responses(sort_column, sort_direction)
   end
 
   def new
@@ -33,5 +36,13 @@ class Users::NotificationsController < Users::ApplicationController
   private
     def notification_params
       params.require(:notification).permit(:user_id, :team_id, :state, :email)
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
+
+    def sort_column
+      %w[state created_for].include?(params[:sort]) ?  params[:sort] : "state"
     end
 end

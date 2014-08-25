@@ -58,16 +58,13 @@ class User < ActiveRecord::Base
   end
 
   def order_responses(sort, direction)
-    set_direction = %w[asc desc].include?(direction) ?  direction : 'asc'
-    set_sort = Response.column_names.include?(sort) ? sort : 'state'
-
     if sort == 'created_for'
-      order_events = events.order(sort + ' ' + direction)
+      order_events = events.order("#{sort} #{direction}")
       order_events.map do |event|
         responses.where(event: event).first
       end
     else
-      responses.order(set_sort + ' ' + set_direction)
+      responses.order("#{sort} #{direction}")
     end
   end
 
