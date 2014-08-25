@@ -1,17 +1,11 @@
 <br><div class="text-center"><h2>Edit <%= resource_name.to_s.humanize %></h2></div>
 <div class="row clearfix">
-  <div class="col-md-12 column">
-    <div class="row clearfix">
-      <div class="col-md-4 column">
-      </div>
-      <div class="col-md-4 column">
-        <%= render 'edit_form' %>
-        <%= link_to "Back", :back, class: 'btn btn-default' %>
-      </div>
-      <div class="col-md-4 column">
-        <h3>Cancel my account</h3>
-        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
-      </div>
-    </div>
+  <div class="col-md-8 column">
+    <%= render 'edit_form' %>
+  <%= link_to "Back", :back, class: 'btn btn-default' %>
+  </div>
+  <div class="col-md-4 column">
+    <h3>Cancel my account</h3>
+    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %></p>
   </div>
 </div>

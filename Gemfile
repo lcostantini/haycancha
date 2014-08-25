@@ -23,3 +23,4 @@ gem 'rails_12factor', group: :production
 gem 'font-awesome-rails'
 gem 'whenever', :require => false
 gem 'codeclimate-test-reporter', group: :test, require: nil
+gem 'paperclip'
