@@ -56,5 +56,11 @@ class User < ActiveRecord::Base
   def email_equal_to(team_user)
     email == team_user.email
   end
-  
+
+  def order_responses(sort, direction)
+    set_direction = %w[asc desc].include?(direction) ?  direction : 'asc'
+    set_sort = Response.column_names.include?(sort) ? sort : 'state'
+    responses.order(set_sort + ' ' + set_direction)
+  end
+
 end

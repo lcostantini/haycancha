@@ -87,3 +87,17 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
   padding-bottom: 40px;
 }
+
+.extend_fa{
+  @extend .fa;
+}
+
+.asc {
+  @extend .extend_fa;
+  @extend .fa-sort-asc;
+}
+
+.desc {
+  @extend .extend_fa;
+  @extend .fa-sort-desc;
+}

@@ -6,12 +6,12 @@
         <th>Team name</th>
         <th>Name</th>
         <th>Date and Time</th>
-        <th>States</th>
+        <th><%= sortable 'state', 'State' %></th>
         <th colspan="3"></th>
       </tr>
     </thead>
     <tbody>
-    <%= render partial: 'users/responses/responses', locals: {responses: current_user.responses} %>
+      <%= render partial: 'users/responses/responses', locals: { responses: current_user.order_responses(params[:sort], params[:direction]) } %>
     </tbody>
   </table>
   <br>
