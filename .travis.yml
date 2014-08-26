@@ -1,10 +1,6 @@
 language: ruby
 rvm:
 - 2.1.2
-addons:
-  postgresql: '9.3'
-before_script:
-- psql -c 'create database travis_ci_test;' -U postgres
 env:
   global:
-    secure: F4oPUoH8hb3YtTEFJCL/8pjdMfHzItAV48o2tyDcdkdPqXM1il72iNJH/AAv64J50J7PzISLK1XBE3/C1y7Q3B6Jk+0K6aimk/RSSo39LQJNeU0iljgwqZVnyscR4WPzEdO17woVPCuqE6NC0nGsoN32OOX+WVlZyLQzC/H8API=
+    secure: "gWFTgOmI43mD/ywe+gXshUmdWl2vCrHk0t/BeYJaWkQSXlpCytaswRGQ+TCybSRHKo0qGBsrnmTaBpF4vG5U7sgxSnGP6UOmRh2Z+7dx7E8RV5GeSIwwZx0l3A2KdTNhzTyCCT3KDR+uyQwRpTzGIRQ1kve+nN7U0PZ4vhZXmcc="
