@@ -1,20 +1,17 @@
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
   pool: 5
-  host: localhost
-  username: ror
-  password: postgres
+  timeout: 5000
 
 development:
   <<: *default
-  database: football_development
+  database: db/development.sqlite3
 
 test:
-  adapter: postgresql
-  database: travis_ci_test
-  username: postgres
+  <<: *default
+  database: ":memory:"
 
 production:
   <<: *default
-  database: football_productions
+  database: db/production.sqlite3
+
