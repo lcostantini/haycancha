@@ -1,4 +1,13 @@
 <%= form_for([:users, :team, @event], :html => {:class => "form-newfield"}) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li class="alert alert-danger"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= f.hidden_field :team_id %>
   <div class="field">
     <%= f.text_field :name, :placeholder => "Name", :class => "form-control" %>

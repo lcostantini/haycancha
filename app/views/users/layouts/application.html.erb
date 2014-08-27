@@ -7,24 +7,24 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render 'navbar' %>
-    <% if flash[:notice] %>
-      <br><p class="alert alert-success"><%= flash[:notice] %></p>
+    <%= render 'navbar' %><br>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
     <% end %>
-      <div class="container-background"><%= yield %></div>
+    <div class="container-background"><%= yield %></div>
 
-  <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'alagranja'; // required: replace example with your forum shortname
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'alagranja'; // required: replace example with your forum shortname
 
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function () {
-      var s = document.createElement('script'); s.async = true;
-      s.type = 'text/javascript';
-      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-  </script>
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    </script>
 
   </body>
 </html>

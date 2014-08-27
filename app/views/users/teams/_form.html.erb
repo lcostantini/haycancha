@@ -1,16 +1,13 @@
 <%= form_for([:users, @team], :html => { :multipart => true, :class => "form-newfield" }) do |f| %>
   <% if @team.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
-
-      <ul>
-      <% @team.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+s      <ul>
+        <% @team.errors.full_messages.each do |message| %>
+          <li class="alert alert-danger"><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <%= image_tag @team.avatar(:thumb) %>
   <%= f.file_field :avatar %><br>
   <div class="field"><%= f.text_field :name, :placeholder => "Name", :class => "form-control" %></div> <br>
