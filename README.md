@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/lcostantini/haycancha/badges/gpa.svg)](https://codeclimate.com/github/lcostantini/haycancha)
+[![Test Coverage](https://codeclimate.com/github/lcostantini/haycancha/badges/coverage.svg)](https://codeclimate.com/github/lcostantini/haycancha)
+
 # Description
 
 The application has 3 namespaces.
