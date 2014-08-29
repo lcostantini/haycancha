@@ -11,36 +11,24 @@ class Owners::FieldsController < Owners::ApplicationController
 
   def create
     @field = current_owner.fields.build(field_params)
-
-    respond_to do |format|
-      if @field.save
-        format.html { redirect_to owners_fields_path, notice: 'Field was successfully created.' }
-        format.json { render :show, status: :created, location: @field }
-      else
-        format.html { render :new }
-        format.json { render json: @field.errors, status: :unprocessable_entity }
-      end
+    if @field.save
+      redirect_to owners_fields_path, notice: 'Field was successfully created.'
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @field.update(field_params)
-        format.html { redirect_to owners_fields_path, notice: 'Field was successfully updated.' }
-        format.json { render :show, status: :ok, location: @field }
-      else
-        format.html { render :edit }
-        format.json { render json: @field.errors, status: :unprocessable_entity }
-      end
+    if @field.update(field_params)
+      redirect_to owners_fields_path, notice: 'Field was successfully updated.'
+    else
+      render :edit
     end
   end
 
   def destroy
     @field.destroy
-    respond_to do |format|
-      format.html { redirect_to owners_fields_path, notice: 'Field was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to owners_fields_path, notice: 'Field was successfully destroyed.'
   end
 
   private
