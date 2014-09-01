@@ -11,7 +11,3 @@ test:
   <<: *default
   database: ":memory:"
 
-production:
-  <<: *default
-  database: db/production.sqlite3
-
