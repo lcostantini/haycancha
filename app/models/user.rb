@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
-  has_attached_file :avatar, :styles => { :medium => "70x70>", :thumb => "30x30>" }, :default_url => "missing-user.png"
+  has_attached_file :avatar, :styles => { :medium => "70x70>", :thumb => "30x30>" }#, :default_url => "missing-user.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   devise :database_authenticatable, :registerable,
