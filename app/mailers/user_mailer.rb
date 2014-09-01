@@ -10,7 +10,7 @@ class UserMailer < ActionMailer::Base
   def waiting_email(event, user)
     @event = event
     @user = user
-    @url = ENV["URL_EMAILS"]
+    @url = ENV["URL_EMAIL"]
     mail(to: @user.email, subject: 'Reminder for a Event')
   end
 
