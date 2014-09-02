@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "no-reply@haycancha.com"
+  default from: "haycancha@gmail.com"
 
   def invited_email(user, current_user)
     @current_user_email = current_user.email
