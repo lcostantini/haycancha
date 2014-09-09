@@ -28,10 +28,16 @@ This is the namespace for the application administrators and they can update any
 - Admin users can administrated all record in the app.
 
 # Instalation
-TODO
-# Getting Started
-TODO
+git clone https://github.com/lcostantini/haycancha.git
+bundle install
+rake db:migrate
+
 # Contributing
-TODO
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new pull request so we can talk about it.
+
 # License
-TODO
+GPL
