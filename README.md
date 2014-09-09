@@ -28,9 +28,9 @@ This is the namespace for the application administrators and they can update any
 - Admin users can administrated all record in the app.
 
 # Instalation
-git clone https://github.com/lcostantini/haycancha.git
-bundle install
-rake db:migrate
+1. git clone https://github.com/lcostantini/haycancha.git
+2. bundle install
+3. rake db:migrate
 
 # Contributing
 1. Fork it
